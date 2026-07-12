@@ -103,7 +103,7 @@ The application follows a modular RAG architecture:
 - **Application API/UI**: Provides a user-facing interface for asking questions, viewing cited sources, and inspecting answer confidence.
 - **Evaluation harness**: Runs fixed questions against the RAG pipeline and records retrieval and generation metrics.
 
-See [docs/architecture.md](docs/architecture.md) for a more detailed component view.
+See [docs/architecture.md](docs/architecture.md) for a more detailed component view, or [docs/PROJECT_DEEP_DIVE.md](docs/PROJECT_DEEP_DIVE.md) for a from-basics-to-everything walkthrough of the whole project, including a full glossary of terms.
 
 ## Project Timeline
 
