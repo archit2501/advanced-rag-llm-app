@@ -2,12 +2,15 @@
 
 This project is a self-contained summer-internship-level implementation of an advanced AI application that combines Retrieval-Augmented Generation (RAG), vector search, document ingestion, prompt orchestration, and LLM APIs. The goal is to build a practical assistant that answers questions from a controlled knowledge base while exposing the engineering tradeoffs behind retrieval quality, latency, grounding, and evaluation.
 
+Repository: <https://github.com/archit2501/advanced-rag-llm-app>
+
 ## Quickstart
 
-1. Create and activate a Python environment.
+1. Clone the repository, then create and activate a Python environment.
 
    ```bash
-   cd /Users/architjain/projects/02-advanced-rag-llm-app
+   git clone https://github.com/archit2501/advanced-rag-llm-app.git
+   cd advanced-rag-llm-app
    python -m venv .venv
    source .venv/bin/activate
    ```
@@ -26,7 +29,7 @@ This project is a self-contained summer-internship-level implementation of an ad
    ```
 
    The default `LLM_PROVIDER=offline` mode needs no API key. Set `LLM_PROVIDER=openai`
-   with `OPENAI_API_KEY` and (optionally) `OPENAI_MODEL=gpt-5.6-luna` for the
+   with `OPENAI_API_KEY` and (optionally) `OPENAI_MODEL=gpt-4o-mini` for the
    OpenAI Responses API, or set `LLM_PROVIDER=ollama` for a local provider.
 
    Embeddings are configured separately via `EMBEDDING_PROVIDER`. The default
