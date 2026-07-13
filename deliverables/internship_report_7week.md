@@ -190,6 +190,10 @@ Choosing the chunk size is a real trade-off and not just a tuning knob. Chunks t
 
 Overlap deserves a note. If you cut cleanly at a boundary, a fact that straddles the boundary can be split so that neither chunk contains it whole. Repeating a little text from the end of one chunk at the start of the next reduces that risk. It costs some storage and some redundancy in retrieval, which is a price worth paying for a small corpus.
 
+![](figures/fig1_chunking.png){width=88%}
+
+**Figure 1.** Chunking with overlap. A normalised document is split into passages of up to about 900 characters, with roughly 160 characters repeated between neighbours (shaded) so a fact that spans a boundary is not lost.
+
 ## 2.5 Embeddings and vector similarity
 
 An embedding is a list of numbers, a vector, that stands in for a piece of text. The goal of a good embedding model is that texts with similar meaning get vectors that are close together in the space, even if they share no words. This is what lets a search for "payment for interns" match a passage that only ever says "stipend." That behaviour is not magic; it is a property the embedding model has to have learned, and a poor embedding will not have it.
@@ -215,6 +219,10 @@ If you have a keyword ranking and a vector ranking, you need a way to combine th
 Reciprocal Rank Fusion, introduced by Cormack and colleagues (2009), sidesteps this by combining ranks instead of scores. Each method contributes an amount that depends only on the position a passage holds in that method's ranking, computed as one divided by a constant plus the rank. The constant, usually 60, softens the difference between the top ranks so that the very first result does not completely swamp the second. A passage that both methods rank near the top gets contributions from both and ends up with a high fused score. The method is simple, it needs no score calibration, and it works surprisingly well, which is why it is a common default.
 
 The system adds a small extra term based on literal query-term overlap on top of the fused score, which nudged a few borderline cases in the right direction on this corpus. I am honest in Chapter 7 that a term like that should really be tuned on separate data rather than chosen because it helped the numbers I was looking at.
+
+![](figures/fig2_retrieval.png){width=62%}
+
+**Figure 2.** Hybrid retrieval. The question is scored by keyword ranking (BM25) and by vector similarity independently; the two rankings are combined with Reciprocal Rank Fusion, and the top-k passages are returned.
 
 ## 2.8 The evidence gate and refusal
 
@@ -308,11 +316,19 @@ The system is a pipeline of small modules, each with one responsibility. Configu
 
 The value of this separation showed up constantly during debugging. When a question returned a wrong answer, I could look at each stage's output in turn and find the one that was responsible, rather than guessing at the whole thing as a black box.
 
+![](figures/fig3_architecture.png){width=95%}
+
+**Figure 3.** The system architecture. The ingestion path runs when a document is added; the query path runs when a question is asked. Storage feeds the retrieval stage with the stored passages.
+
 ## 4.3 The data model
 
 There are two stored entities. A document has an identifier, a title, a source filename, a count of its passages, and a creation time. A passage, which the code calls a chunk, has its own identifier, the identifier of the document it belongs to, the title and source copied down for convenience, its zero-based position within the document, its text, its embedding stored as JSON, and a small metadata object. The passage identifier is built from the document identifier and the position, so it is both unique and readable.
 
 Two design choices in this model are worth calling out. The document identifier is derived from the filename and the content by hashing them, so re-ingesting the same file produces the same identifier and replaces the old copy instead of creating a duplicate. And every passage carries enough provenance (its document, source, and position) that a citation can be built from it directly. Provenance is not a nice-to-have here; it is the thing that makes citations possible at all.
+
+![](figures/fig4_datamodel.png){width=85%}
+
+**Figure 4.** The data model. Each document has many chunks; every chunk stores its text, its embedding as JSON, its metadata, and the provenance fields needed to build a citation.
 
 ## 4.4 The two main flows
 
@@ -601,6 +617,10 @@ The retrieval comparison across the three strategies, on the same corpus, is bel
 | Keyword only | 1.0000 | 0.9306 | 0.9441 | 0.0000 | 0.8290 |
 | Hybrid | 1.0000 | 0.9097 | 0.9283 | 0.8000 | 0.9126 |
 
+![](figures/fig7_retrieval_comparison.png){width=80%}
+
+**Figure 7.** Retrieval comparison on the default (hashing) embedder. Keyword-only has the highest nDCG@5; the three strategies are close because the hashing vector signal is itself largely lexical.
+
 The number that first looks like the headline, hybrid's combined score of 0.9126, needs the honest reading I gave in Chapter 5. Keyword only has the best pure ranking here; its nDCG of 0.9441 is the highest in the table. Hybrid leads the combined score only because that score folds in abstention accuracy, where the evidence gate refused four of five unsupported questions. Since the vector signal on this embedder is lexical, the two fused signals are correlated, so this is not a clean demonstration that dense retrieval helps. It is a demonstration that a refusal policy attached to a lexical ranker does well on a lexical corpus. That is a narrower and more accurate claim.
 
 The perfect citation-or-refusal coverage of 1.0000 also deserves its caveat. The offline answerer tags every sentence it emits with a source number, so in offline mode a citation is almost always present by construction. The metric confirms the plumbing, not the faithfulness of the citation to the claim.
@@ -624,6 +644,14 @@ The first is that learned dense retrieval genuinely ranks better. Vector-only nD
 The second is that the ranking gain did not reach the answers. Required-fact recall slipped slightly, from 0.8241 to 0.8056, and keyword only still had the highest nDCG. The reason is the corpus. The questions were hand-written and share vocabulary with the documents, so keyword matching is already near its ceiling and a semantic model has little room to help. Dense retrieval earns its keep on paraphrase and vocabulary mismatch, which this corpus does not contain much of. On a corpus with more of that, I would expect the learned embedder to help end to end. On mine it did not, and I report the slightly lower number rather than the one I would have preferred.
 
 The third finding is the one I keep coming back to. The evidence gate collapsed. Its accuracy on the unanswerable questions fell to zero for every retrieval mode. The gate's thresholds had been tuned to the hashing embedder's score scale, and the learned model produces cosine similarities on a different, generally higher scale, so the thresholds that used to catch weak evidence never fired. The gate is not broken in principle; it is uncalibrated for the new embedder. The lesson is that refusal thresholds are specific to the scoring underneath them and must be recalibrated whenever that scoring changes. A threshold tuned on one embedder tells you nothing about another, and the zero in that table is uncalibrated gating rather than a retrieval failure.
+
+![](figures/fig8_embedder_ablation.png){width=80%}
+
+**Figure 8.** Swapping in a learned embedder. The ranking metrics improve, but the hybrid abstention accuracy falls from 0.80 to 0.00 because the gate thresholds were tuned to the hashing embedder's score scale.
+
+![](figures/fig9_answer_metrics.png){width=72%}
+
+**Figure 9.** Answer-evaluation metrics by embedder. The learned embedder gives a slightly lower fact recall on this vocabulary-aligned corpus, and its uncalibrated gate refuses none of the unanswerable questions.
 
 ## 7.6 What the numbers add up to
 
@@ -1010,43 +1038,15 @@ This is the lenient proxy from Chapter 7. It is honest about being a proxy: it c
 
 # Appendix H. Figures
 
-The architecture and the two main flows are simple enough to draw in text.
+The two main flows through the system are shown below. The overall architecture appears earlier as Figure 3.
 
-## H.1 The pipeline
+![](figures/fig5_ingestion.png){width=98%}
 
-```
-Configuration -> Ingestion -> Embeddings -> Storage
-                                              |
-                       Question ---------> Retrieval -> Evidence gate
-                                                            |
-                                          refuse <----------+----------> Generation
-                                                                              |
-                                                          Citations <---------+
-                                                                              |
-                                                       Answer + sources + diagnostics
-```
+**Figure 5.** The document ingestion flow. The stable identifier makes re-ingesting the same file idempotent, replacing the old passages rather than duplicating them.
 
-Figure H.1. The modules and how a request moves through them. Ingestion runs when a document is added; the question path runs when a question is asked.
+![](figures/fig6_query.png){width=95%}
 
-## H.2 Ingestion flow
-
-```
-file bytes -> extract text -> normalise -> stable identifier
-           -> split into passages -> embed each passage -> store
-```
-
-Figure H.2. What happens when a document is added. The stable identifier makes re-ingesting a file idempotent.
-
-## H.3 Query flow
-
-```
-question -> load passages -> rank (keyword + vector, fused)
-         -> evidence gate?
-              weak  -> refusal message + diagnostics
-              ok    -> generate -> validate citations -> answer + sources + diagnostics
-```
-
-Figure H.3. What happens when a question is asked. The gate is the branch between refusing and answering, and it is the part that had to be recalibrated when the embedder changed.
+**Figure 6.** The question answering flow. The evidence gate is the branch between refusing and answering, and it is the part that had to be recalibrated when the embedder changed.
 
 # Appendix I. Repository and artifacts
 
