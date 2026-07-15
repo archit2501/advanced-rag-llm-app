@@ -1,6 +1,6 @@
 # Advanced RAG + LLM Application — Deep Dive
 
-**Repository:** <https://github.com/archit2501/advanced-rag-llm-app>
+**Repository:** <https://github.com/Bhoomi177/advanced-rag-llm-app>
 
 This document explains the project from first principles to implementation detail. It is written to be read top to bottom by someone new to Retrieval-Augmented Generation, but it is also a reference: every subsystem has its own section, and there is a full glossary at the end. Terms are **bolded and defined** the first time they appear.
 
@@ -353,7 +353,7 @@ These are development measurements on a small synthetic corpus, not production c
 ### 5.2 Install and run
 
 ```bash
-git clone https://github.com/archit2501/advanced-rag-llm-app.git
+git clone https://github.com/Bhoomi177/advanced-rag-llm-app.git
 cd advanced-rag-llm-app
 python -m venv .venv
 source .venv/bin/activate

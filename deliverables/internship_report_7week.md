@@ -8,7 +8,7 @@ A report submitted in partial fulfilment of the requirements for the summer inte
 
 Submitted by
 
-**archit2501**
+**Bhoomi177**
 Enrolment No.: [Enrolment Number]
 Department of Computer Science and Engineering
 [University Name]
@@ -26,7 +26,7 @@ Session: 2025–2026
 
 # Certificate
 
-This is to certify that the internship report titled *Building a Grounded Retrieval-Augmented Question Answering System over a Controlled Document Collection* is a record of the work carried out by **archit2501** (Enrolment No. [Enrolment Number]) during the seven-week summer internship held from 19 May 2026 to 4 July 2026, under my supervision.
+This is to certify that the internship report titled *Building a Grounded Retrieval-Augmented Question Answering System over a Controlled Document Collection* is a record of the work carried out by **Bhoomi177** (Enrolment No. [Enrolment Number]) during the seven-week summer internship held from 19 May 2026 to 4 July 2026, under my supervision.
 
 The work presented here was done by the candidate and has not been submitted elsewhere for the award of any degree or diploma. The candidate completed the objectives agreed at the start of the internship and demonstrated the technical understanding expected at this level.
 
@@ -53,7 +53,7 @@ The evaluation numbers reported in Chapter 7 are the actual results produced by 
 \
 \
 
-archit2501
+Bhoomi177
 Enrolment No.: [Enrolment Number]
 Date: __________
 Place: [City]
@@ -70,7 +70,7 @@ Thanks also to the other interns in the group, who sat through my questions abou
 
 Any mistakes that remain are mine.
 
-archit2501
+Bhoomi177
 
 \newpage
 
@@ -284,7 +284,7 @@ The optional dependencies are pypdf for reading PDF files, the openai package fo
 
 The code is organised so that each concern has one file, which made it easy to test and change pieces in isolation. The backend package holds the settings, text processing, embeddings, storage, retrieval, the language-model adapters, the orchestration service, the API, the data models, and the evaluation and comparison scripts. The frontend folder holds the single HTML page, its stylesheet, and its script. There is a folder of sample documents, a folder of evaluation data and recorded results, a tests folder, a docs folder, and a deliverables folder that holds this report and the presentation.
 
-The project is on GitHub at github.com/archit2501/advanced-rag-llm-app, and the version history there mirrors the week-by-week progress in Chapter 5, since I committed at the end of most working sessions.
+The project is on GitHub at github.com/Bhoomi177/advanced-rag-llm-app, and the version history there mirrors the week-by-week progress in Chapter 5, since I committed at the end of most working sessions.
 
 ## 3.4 Configuration and secrets
 
@@ -1050,7 +1050,7 @@ The two main flows through the system are shown below. The overall architecture 
 
 # Appendix I. Repository and artifacts
 
-The code, the documentation, the evaluation data, and the recorded results are in the public repository at github.com/archit2501/advanced-rag-llm-app. The recorded runs referenced in Chapter 7 are stored as JSON in the evaluation folder: the default results, the retrieval comparison, and the two learned-embedding runs. The commit history follows the weekly progress in Chapter 5. This report and the accompanying presentation are in the deliverables folder.
+The code, the documentation, the evaluation data, and the recorded results are in the public repository at github.com/Bhoomi177/advanced-rag-llm-app. The recorded runs referenced in Chapter 7 are stored as JSON in the evaluation folder: the default results, the retrieval comparison, and the two learned-embedding runs. The commit history follows the weekly progress in Chapter 5. This report and the accompanying presentation are in the deliverables folder.
 
 \newpage
 

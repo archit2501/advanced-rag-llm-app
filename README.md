@@ -2,14 +2,14 @@
 
 This project is a self-contained summer-internship-level implementation of an advanced AI application that combines Retrieval-Augmented Generation (RAG), vector search, document ingestion, prompt orchestration, and LLM APIs. The goal is to build a practical assistant that answers questions from a controlled knowledge base while exposing the engineering tradeoffs behind retrieval quality, latency, grounding, and evaluation.
 
-Repository: <https://github.com/archit2501/advanced-rag-llm-app>
+Repository: <https://github.com/Bhoomi177/advanced-rag-llm-app>
 
 ## Quickstart
 
 1. Clone the repository, then create and activate a Python environment.
 
    ```bash
-   git clone https://github.com/archit2501/advanced-rag-llm-app.git
+   git clone https://github.com/Bhoomi177/advanced-rag-llm-app.git
    cd advanced-rag-llm-app
    python -m venv .venv
    source .venv/bin/activate
