@@ -20,7 +20,7 @@ submitted in partial fulfilment of the requirements for the degree of
 
 Submitted by
 
-**Bhoomi177**
+**[Student Name]**
 
 Enrolment No.: [Enrolment Number]
 
@@ -58,7 +58,7 @@ Thanks also to the other interns in the group, who sat through my questions abou
 
 Any mistakes that remain are mine.
 
-Bhoomi177
+[Student Name]
 
 \newpage
 
@@ -71,7 +71,7 @@ The evaluation numbers reported in Chapter 7 are the actual results produced by 
 \
 \
 
-Bhoomi177
+[Student Name]
 Enrolment No.: [Enrolment Number]
 Date: __________
 Place: [City]
@@ -96,7 +96,7 @@ Ref: [HR/Internship reference number]  \hfill  Date: 5 May 2026
 
 **Subject: Offer of Summer Internship**
 
-Dear Bhoomi177,
+Dear [Student Name],
 
 With reference to your application and the selection process that followed, we are pleased to offer you a summer internship at [Host Organisation] in the role of Research and Development Intern, working on retrieval-augmented question answering.
 
@@ -125,7 +125,7 @@ For [Host Organisation]
 
 _______________________  \hfill  _______________________
 
-[Authorised Signatory]  \hfill  Accepted: Bhoomi177
+[Authorised Signatory]  \hfill  Accepted: [Student Name]
 
 [Designation]  \hfill  Date: __________
 
@@ -151,7 +151,7 @@ Ref: [Certificate reference number]  \hfill  Date: 4 July 2026
 
 \vspace{0.4cm}
 
-This is to certify that **Bhoomi177** (Enrolment No. [Enrolment Number]), a student of Bachelor of Technology in Computer Science and Engineering at [University Name], has successfully completed a summer internship at [Host Organisation] from **19 May 2026 to 4 July 2026**.
+This is to certify that **[Student Name]** (Enrolment No. [Enrolment Number]), a student of Bachelor of Technology in Computer Science and Engineering at [University Name], has successfully completed a summer internship at [Host Organisation] from **19 May 2026 to 4 July 2026**.
 
 During this period the intern worked on the design and implementation of a retrieval-augmented question answering system, covering document ingestion, hybrid retrieval, evidence-gated generation with citations, and evaluation. The intern's conduct and performance during the internship were found to be satisfactory.
 
@@ -192,7 +192,7 @@ Date: __________
 | | | |
 | --- | --- | --- |
 | _____________________ | _____________________ | _____________________ |
-| Bhoomi177 (Student) | [Mentor Name] (Industry Guide) | [Faculty Supervisor Name] (Faculty Guide) |
+| [Student Name] (Student) | [Mentor Name] (Industry Guide) | [Faculty Supervisor Name] (Faculty Guide) |
 | Date: | Date: | Date: |
 
 \newpage
@@ -1156,7 +1156,7 @@ Software and documentation I relied on: the FastAPI documentation, the SQLite do
 
 \vspace{0.4cm}
 
-I, Bhoomi177 (Enrolment No. [Enrolment Number]), declare that this internship report titled *Building a Grounded Retrieval-Augmented Question Answering System over a Controlled Document Collection* is my own work. The text has been checked for similarity using the institution's plagiarism-detection tool, and the reported similarity index is recorded below. Sources that were consulted are cited in the References section.
+I, [Student Name] (Enrolment No. [Enrolment Number]), declare that this internship report titled *Building a Grounded Retrieval-Augmented Question Answering System over a Controlled Document Collection* is my own work. The text has been checked for similarity using the institution's plagiarism-detection tool, and the reported similarity index is recorded below. Sources that were consulted are cited in the References section.
 
 \vspace{0.4cm}
 
@@ -1171,7 +1171,7 @@ I, Bhoomi177 (Enrolment No. [Enrolment Number]), declare that this internship re
 
 _______________________  \hfill  _______________________
 
-Bhoomi177 (Student)  \hfill  [Faculty Supervisor Name] (Faculty Guide)
+[Student Name] (Student)  \hfill  [Faculty Supervisor Name] (Faculty Guide)
 
 Date: __________  \hfill  Date: __________
 
@@ -1194,7 +1194,7 @@ Each week I submitted a short progress report to my industry guide. They are rep
 
 _____________________  \hfill  _____________________
 
-Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
+[Student Name] (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 ## Weekly Progress Report 2
 
@@ -1209,7 +1209,7 @@ Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 _____________________  \hfill  _____________________
 
-Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
+[Student Name] (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 ## Weekly Progress Report 3
 
@@ -1224,7 +1224,7 @@ Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 _____________________  \hfill  _____________________
 
-Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
+[Student Name] (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 ## Weekly Progress Report 4
 
@@ -1239,7 +1239,7 @@ Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 _____________________  \hfill  _____________________
 
-Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
+[Student Name] (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 ## Weekly Progress Report 5
 
@@ -1254,7 +1254,7 @@ Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 _____________________  \hfill  _____________________
 
-Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
+[Student Name] (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 ## Weekly Progress Report 6
 
@@ -1269,7 +1269,7 @@ Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 _____________________  \hfill  _____________________
 
-Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
+[Student Name] (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 ## Weekly Progress Report 7
 
@@ -1284,7 +1284,7 @@ Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 _____________________  \hfill  _____________________
 
-Bhoomi177 (Student)  \hfill  [Mentor Name] (Industry Guide)
+[Student Name] (Student)  \hfill  [Mentor Name] (Industry Guide)
 
 \newpage
 

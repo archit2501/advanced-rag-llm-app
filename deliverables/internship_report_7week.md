@@ -8,7 +8,7 @@ A report submitted in partial fulfilment of the requirements for the summer inte
 
 Submitted by
 
-**Bhoomi177**
+**[Student Name]**
 Enrolment No.: [Enrolment Number]
 Department of Computer Science and Engineering
 [University Name]
@@ -26,7 +26,7 @@ Session: 2025–2026
 
 # Certificate
 
-This is to certify that the internship report titled *Building a Grounded Retrieval-Augmented Question Answering System over a Controlled Document Collection* is a record of the work carried out by **Bhoomi177** (Enrolment No. [Enrolment Number]) during the seven-week summer internship held from 19 May 2026 to 4 July 2026, under my supervision.
+This is to certify that the internship report titled *Building a Grounded Retrieval-Augmented Question Answering System over a Controlled Document Collection* is a record of the work carried out by **[Student Name]** (Enrolment No. [Enrolment Number]) during the seven-week summer internship held from 19 May 2026 to 4 July 2026, under my supervision.
 
 The work presented here was done by the candidate and has not been submitted elsewhere for the award of any degree or diploma. The candidate completed the objectives agreed at the start of the internship and demonstrated the technical understanding expected at this level.
 
@@ -53,7 +53,7 @@ The evaluation numbers reported in Chapter 7 are the actual results produced by 
 \
 \
 
-Bhoomi177
+[Student Name]
 Enrolment No.: [Enrolment Number]
 Date: __________
 Place: [City]
@@ -70,7 +70,7 @@ Thanks also to the other interns in the group, who sat through my questions abou
 
 Any mistakes that remain are mine.
 
-Bhoomi177
+[Student Name]
 
 \newpage
 
