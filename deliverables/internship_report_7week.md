@@ -284,7 +284,7 @@ The optional dependencies are pypdf for reading PDF files, the openai package fo
 
 The code is organised so that each concern has one file, which made it easy to test and change pieces in isolation. The backend package holds the settings, text processing, embeddings, storage, retrieval, the language-model adapters, the orchestration service, the API, the data models, and the evaluation and comparison scripts. The frontend folder holds the single HTML page, its stylesheet, and its script. There is a folder of sample documents, a folder of evaluation data and recorded results, a tests folder, a docs folder, and a deliverables folder that holds this report and the presentation.
 
-The project is on GitHub at github.com/Bhoomi177/advanced-rag-llm-app, and the version history there mirrors the week-by-week progress in Chapter 5, since I committed at the end of most working sessions.
+The project is on GitHub at github.com/your-account/advanced-rag-llm-app, and the version history there mirrors the week-by-week progress in Chapter 5, since I committed at the end of most working sessions.
 
 ## 3.4 Configuration and secrets
 
@@ -1050,7 +1050,7 @@ The two main flows through the system are shown below. The overall architecture 
 
 # Appendix I. Repository and artifacts
 
-The code, the documentation, the evaluation data, and the recorded results are in the public repository at github.com/Bhoomi177/advanced-rag-llm-app. The recorded runs referenced in Chapter 7 are stored as JSON in the evaluation folder: the default results, the retrieval comparison, and the two learned-embedding runs. The commit history follows the weekly progress in Chapter 5. This report and the accompanying presentation are in the deliverables folder.
+The code, the documentation, the evaluation data, and the recorded results are in the public repository at github.com/your-account/advanced-rag-llm-app. The recorded runs referenced in Chapter 7 are stored as JSON in the evaluation folder: the default results, the retrieval comparison, and the two learned-embedding runs. The commit history follows the weekly progress in Chapter 5. This report and the accompanying presentation are in the deliverables folder.
 
 \newpage
 

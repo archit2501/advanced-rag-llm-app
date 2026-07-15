@@ -3,7 +3,6 @@ name = "advanced-rag-llm-app"
 version = "0.1.0"
 description = "Summer internship project: advanced RAG application with LLM API integrations, citations, and evaluation."
 requires-python = ">=3.9"
-authors = [{ name = "Internship Project" }]
 readme = "README.md"
 dependencies = [
     "fastapi>=0.110",
